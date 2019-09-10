@@ -12,23 +12,30 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Name" [(ngModel)]="studentName"></ion-input>
+          <ion-input placeholder="Enter Name" [(ngModel)]="itemName"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Age" [(ngModel)]="studentAge"></ion-input>
+          <ion-input placeholder="Enter Quantity" [(ngModel)]="itemQuantity"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Address" [(ngModel)]="studentAddress"></ion-input>
+          <ion-input placeholder="Enter Price" [(ngModel)]="itemPrice"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Description" [(ngModel)]="itemDescription"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col text-center>
-        <ion-button (click)="CreateRecord()" [disabled]="!studentName || !studentAge || !studentAddress">
+        <ion-button (click)="CreateRecord()" [disabled]="!itemName || !itemQuantity || !itemPrice">
           <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
           &nbsp;Create Record
         </ion-button>
@@ -37,11 +44,13 @@
   </ion-grid>
 
 
-  <ion-card *ngFor="let item of students">
+  <ion-card *ngFor="let item of itens">
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
-        <ion-card-title>{{item.Name}} of {{item.Age}} years</ion-card-title>
-        <ion-card-subtitle>From: {{item.Address}}</ion-card-subtitle>
+        <ion-card-title>{{item.Name}}</ion-card-title>
+        <ion-card-subtitle>Description: {{item.Description}}</ion-card-subtitle>
+        <ion-card-subtitle>Price: {{item.Price}}</ion-card-subtitle>
+        <ion-card-subtitle>Stock: {{item.Quantity}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
 
@@ -83,12 +92,16 @@
           <ion-input type="text" [(ngModel)]="item.EditName"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label><strong>Age</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditAge"></ion-input>
+          <ion-label><strong>Description</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditDescription"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label><strong>Address</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
+          <ion-label><strong>Quantity</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditQuantity"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Price</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditPrice"></ion-input>
         </ion-item>
       </ion-card-content>
     </ng-template>

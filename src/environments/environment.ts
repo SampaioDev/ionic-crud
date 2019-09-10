@@ -5,13 +5,13 @@
 export const firebaseConfig = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAJBPu_ohjnKbMEYJcRqahKxDWjvm86IRM",
-    authDomain: "crud-teste-sampaio.firebaseapp.com",
-    databaseURL: "https://crud-teste-sampaio.firebaseio.com",
-    projectId: "crud-teste-sampaio",
-    storageBucket: "crud-teste-sampaio.appspot.com",
-    messagingSenderId: "304405076165",
-    appId: "1:304405076165:web:1075c4209b8a75c7"
+    apiKey: "AIzaSyAW7wxGsFg_qNCDv2EFuHB9daBLReTMeVw",
+    authDomain: "restaurantes-do-amigao-5b962.firebaseapp.com",
+    databaseURL: "https://restaurantes-do-amigao-5b962.firebaseio.com",
+    projectId: "restaurantes-do-amigao-5b962",
+    storageBucket: "",
+    messagingSenderId: "1037560348160",
+    appId: "1:1037560348160:web:20c398d0c529474810a2e5"
   }
 };
 

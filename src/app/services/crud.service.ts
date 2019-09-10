@@ -5,26 +5,26 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
+export class CrudService { 
 
   constructor(
     private firestore: AngularFirestore
   ) { }
 
 
-  create_NewStudent(record) {
-    return this.firestore.collection('Students').add(record);
+  create_NewItem(record) {
+    return this.firestore.collection('Itens').add(record);
   }
 
-  read_Students() {
-    return this.firestore.collection('Students').snapshotChanges();
+  read_Itens() {
+    return this.firestore.collection('Itens').snapshotChanges();
   }
 
-  update_Student(recordID,record){
-    this.firestore.doc('Students/' + recordID).update(record);
+  update_Item(recordID,record){
+    this.firestore.doc('Itens/' + recordID).update(record);
   }
 
-  delete_Student(record_id) {
-    this.firestore.doc('Students/' + record_id).delete();
+  delete_Item(record_id) {
+    this.firestore.doc('Itens/' + record_id).delete();
   }
 }
